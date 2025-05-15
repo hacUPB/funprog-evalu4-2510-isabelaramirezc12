@@ -8,12 +8,12 @@ int main (){
     int opcion;
 
 
-printf("Ingrese el nombre del archivo de entrada (.txt): ");
+printf("Por favor ingrese el nombre del archivo de entrada (.txt): ");
     scanf("%s", nombreArchivo);
 
     texto = cargarArchivo(nombreArchivo);
     if (!texto) {
-        printf("Error al abrir el archivo.\n");
+        printf("Lo siento, hay un error al abrir el archivo.\n");
         return 1;
     }
 
