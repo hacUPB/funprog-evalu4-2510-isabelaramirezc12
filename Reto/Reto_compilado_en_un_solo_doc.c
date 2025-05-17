@@ -1,4 +1,4 @@
-##include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
@@ -21,7 +21,7 @@ int main() {
 
     texto = cargarArchivo(nombreArchivo);
     if (!texto) {
-        printf("Lo siento, hay un error al abrir el archivo.\n");
+        printf("Errorrrr, no se puede abrir el archivo\n");
         return 1;
     }
 
@@ -54,15 +54,15 @@ int main() {
                 printf("El nombre del archivo de salida es: ");
                 scanf("%s", nombreSalida);
                 guardarResultados(nombreSalida, texto, modificado);
-                printf("Los resultados han sido guardados en '%s'\n", nombreSalida);
+                printf("Los resultados se guardaron en:  '%s'\n", nombreSalida);
                 break;
 
             case 5:
-                printf("Saliendo del programa...\n");
+                printf("Salir\n");
                 break;
 
             default:
-                printf("Error: esa opción no está disponible. Por favor, seleccione otra.\n");
+                printf("Errorrrrr, Por favor seleccione nuevamente la opción deseada\n");
                 break;
         }
     } while (opcion != 5);
@@ -138,9 +138,9 @@ void contarVocales(const char* texto) {
 
 char* reemplazarPalabra(char* texto) {
     char buscar[50], reemplazo[50];
-    printf("Palabra que se desea buscar: ");
+    printf("La palabra que se desea buscar es: ");
     scanf("%s", buscar);
-    printf("Palabra que se desea reemplazar: ");
+    printf("La palabra que se desea reemplazar es: ");
     scanf("%s", reemplazo);
 
     char* nuevoTexto = NULL;
@@ -180,7 +180,7 @@ char* reemplazarPalabra(char* texto) {
 void guardarResultados(const char* nombreArchivo, const char* texto, int incluirTexto) {
     FILE* salida = fopen(nombreArchivo, "w");
     if (!salida) {
-        printf("Error: no se puede abrir el archivo de salida\n");
+        printf("Errorrr, no se puede abrir el archivo de salida\n");
         return;
     }
 
